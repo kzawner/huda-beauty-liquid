@@ -30,7 +30,6 @@
 
   <!-- JS -->
   <script src="images/jquery-1.10.2.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="images/validation.js"></script>
   <script type="text/javascript" src="images/ab.min.js"></script>
   <script type="text/javascript" src="images/timer.js"></script>
   <script type="text/javascript" src="images/slick.min.js"></script>
@@ -44,79 +43,16 @@
         "short_description": "Набор матовых помад Huda Beauty",
         "full_description": "Набор матовых помад Huda Beauty"
       },
-      "prices": {
-        "271": {
-          "price": 2990,
-          "old_price": 5980,
-          "delivery_price": 0,
-          "tax_price": 0,
-          "upsale_price": 0,
-          "geo_key": "RU",
-          "name": "Россия",
-          "currency": "руб.",
-          "rate": 1,
-          "phone_template": "+7 928 827-22-53",
-          "address_template": "135999, Москва, ул. Ленина, д.10, кв.5",
-          "name_template": "Петров Петр Петрович",
-          "active": true
-        },
-        "272": {
-          "price": 16990,
-          "old_price": 33980,
-          "delivery_price": 0,
-          "tax_price": 0,
-          "upsale_price": 0,
-          "geo_key": "KZ",
-          "name": "Қазақстан",
-          "currency": "тенге",
-          "rate": 5.3,
-          "phone_template": "+7 705 1301111",
-          "address_template": "ул. Майлина, д.3, кв. 6, г. Костанай, 110003",
-          "name_template": "Алтынбаев Азат Тюлегенович",
-          "active": false
-        },
-        "354": {
-          "price": 3400,
-          "old_price": 6800,
-          "delivery_price": 0,
-          "tax_price": 0,
-          "upsale_price": 0,
-          "geo_key": "KG",
-          "name": "Киргизия",
-          "currency": "сом",
-          "rate": 1.512,
-          "phone_template": "+996 312 90-58-05",
-          "address_template": "720001, Бишкек, ул. Уметалиева, д. 76, кв. 80",
-          "name_template": "Нурлан Калыбеков",
-          "active": false
-        },
-        "357": {
-          "price": 99,
-          "old_price": 198,
-          "delivery_price": 0,
-          "tax_price": 0,
-          "upsale_price": 0,
-          "geo_key": "BY",
-          "name": "Беларусь",
-          "currency": "бел. руб.",
-          "rate": 0.032,
-          "phone_template": "+37 529 186 24 65",
-          "address_template": "220035, г. Минск, пр-т Машерова, д. 76, кв. 17",
-          "name_template": "Матвеев Евгений Алексеевич",
-          "active": false
-        }
-      },
-      "lowPrice": {
-        "year": "2018",
-        "month": "02",
-        "day": "23"
-      }
     };
   </script>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.html" type="image/x-icon">
   <link rel="icon" href="favicon.html" type="image/x-icon">
+
+  <?php
+  include __DIR__ . '/include/all_codes.php';
+  ?>
 </head>
 
 <body>
@@ -134,7 +70,7 @@
     }
 
     ad1_notify.params = {
-      city: "Львов",
+      city: "",
       landDir: "huda_beauty_1",
       sex: "",
       multiply: "" || 0,
@@ -150,21 +86,9 @@
 
   <script type="text/javascript" src="images/func45c4.js?9"></script>
 
-
   <script>
     var formIsSubmitted = false;
   </script>
-
-  <script type="text/javascript" src="images/unload_submit1679.js?6"></script>
-
-
-
-
-
-
-
-
-
 
   <section class="top-line">
     <div class="wrap clearfix">
@@ -186,7 +110,7 @@
   </section>
 
   <section class="dop">
-    Акция продлится до <span class="m1-date">21.02.2018</span>. Обращайте внимание на новые&nbsp;цены.
+    Акция продлится до <span class="m1-date"><?php $datetime = new DateTime('tomorrow'); print $datetime->format("%Y.%m.%d"); ?></span>. Обращайте внимание на новые&nbsp;цены.
   </section>
 
   <section class="block-2">
@@ -240,28 +164,16 @@
             Цена:
             <span class="old-cost"><span class="price_land_s2">5980</span> <span class="price_land_curr">руб.</span></span> /
             <span class="new-cost"><span class="price_land_s1">2990</span> <span class="price_land_curr">руб.</span></span>
-
           </div>
-          <form class="orderformcdn" action="http://huda-matte.com/order" method="post">
-            <select name="country">
-                                                                <option value='271' selected="selected">Россия</option>
-                                                                <option value='272'>Қазақстан</option>
-                                                                <option value='354'>Киргизия</option>
-                                                                <option value='357'>Беларусь</option>
-                                                        </select>
+
+          <form class="orderformcdn" action="order-success.php"" method="post">
             <input class="field" type="text" name="name" placeholder="Введите Ф.И.О" required="">
             <input class="field" type="tel" name="phone" placeholder="Введите телефон" required="">
-            <div class="errField"></div>
             <button class="button-m">Заказать со скидкой</button>
-            <input type="hidden" name="address" value="">
-            <input type="hidden" name="product_count" id="product_count" value="1">
-            <input type="hidden" name="number_product" value="1798">
 
-            <input type="hidden" name="split_test_id" value="0">
-            <input type="hidden" name="split_test" value="0">
-            <input type="hidden" name="split_test_host" value="huda-matte.com">
-            <input type="hidden" name="fchck" value="7f8bb20069f64d9d2aa75fcf928489bbbdfac367">
-            <input type="hidden" name="ucfi" id="ucfi" value="0">
+            <div style="display:none;">
+              <input type="text" name="product_name" id="product-name">
+            </div>
           </form>
         </div>
       </div>
@@ -325,65 +237,29 @@
   </section>
 
   <section class="copyright">
-    <img src="images/rekv.png" style="display:block;margin:0 auto">
-    <img src="images/logo.jpg" style="display:block;margin:0 auto">
-    <p><a href="privacypolicy.html" target="_blank">Политика конфиденциальности</a></p>
+    <div style="font-size: 1em; color: #999; text-align: center; ">shopgodzilla.com.ua ©<?php print date("Y") ?> | Все права защищены</div>
   </section>
 
   <link rel="stylesheet" href="images/stylec4ca.css?1">
   <script src="images/scriptc81e.js?2"></script>
 
-  <!--{-->
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(d, w, c) {
-      (w[c] = w[c] || []).push(function() {
-        try {
-          w.yaCounter22765945 = new Ya.Metrika({
-            id: 22765945,
-            webvisor: true,
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-          });
-        } catch (e) {}
-      });
+  <script>
+  // ask politely form.js to load even if not from root path of the url.
+  (function () {
+    var getUrl = window.location;
+    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+    Object.defineProperty(document, "referrer", {get : function(){ return baseUrl; }});
+    console.debug(`document referrer set to $baseUrl`);
+  })();
 
-      var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function() {
-          n.parentNode.insertBefore(s, n);
-        };
-      s.type = "text/javascript";
-      s.async = true;
-      s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-      if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-      } else {
-        f();
-      }
-    })(document, window, "yandex_metrika_callbacks");
+  // set product name in the order form to the current url and page title.
+  (function () {
+    $('#product-name').val(document.title + " (" + window.location.href + ")");
+  })();
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/22765945" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-  <!-- /Yandex.Metrika counter -->
-  <!--||-->
-  <script async src="images/mtrk.js"></script>
-  <!--}-->
+  <script src="https://b24go.com/form/v3/b24-iunab6.bitrix24.ru/form.js"></script>
+  <script src="success-page.js"></script>
 
 </body>
 
-<!-- Mirrored from huda-matte.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Feb 2018 11:27:46 GMT -->
-
 </html>
-
-
-
-
-
-
-
-
-
-
-<!-- 1 -->
