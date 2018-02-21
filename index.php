@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!-- Mirrored from huda-matte.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Feb 2018 11:27:09 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<!-- /Added by HTTrack -->
 
 <head>
   <meta charset="utf-8">
@@ -110,7 +107,7 @@
   </section>
 
   <section class="dop">
-    Акция продлится до <span class="m1-date"><?php $datetime = new DateTime('tomorrow'); print $datetime->format("%Y.%m.%d"); ?></span>. Обращайте внимание на новые&nbsp;цены.
+    Акция продлится до <span class="m1-date"><?php $datetime = new DateTime('tomorrow'); print $datetime->format("Y.m.d"); ?></span>. Обращайте внимание на новые&nbsp;цены.
   </section>
 
   <section class="block-2">
